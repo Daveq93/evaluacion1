@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+}
+
+group 'com.uce.edu'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+/*
+ext {
+    junitVersion = '5.9.2'
+}*/
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    // Helidon WebServer
+    implementation 'io.helidon.webserver:helidon-webserver:3.0.0'
+    implementation 'io.helidon.webserver:helidon-webserver-jersey:3.0.0'
+    implementation 'io.helidon.media:helidon-media-jsonp:3.0.0'
+    implementation 'io.helidon.config:helidon-config-yaml:3.0.0'
+    implementation 'io.helidon.health:helidon-health:3.0.0'
+    implementation 'io.helidon.health:helidon-health-checks:3.0.0'
+    implementation 'io.helidon.metrics:helidon-metrics:3.0.0'
+
+    //GSON
+    implementation "com.google.code.gson:gson:2.11.0"
+
+    // Test dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+
+    // OpenWebBeans
+    implementation 'org.apache.openwebbeans:openwebbeans-impl:4.0.2'
+
+    // EclipseLink
+    implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:4.0.3'
+
+    // SQLite JDBC
+    implementation("org.xerial:sqlite-jdbc:3.46.0.0")
+
+
+    implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
+    implementation 'jakarta.platform:jakarta.jakartaee-api:9.1.0'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+}
+/*
+tasks.named('test') {
+    useJUnitPlatform()
+}
+*/
